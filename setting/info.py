@@ -8,13 +8,15 @@ def identify_sys():
         with open('setting/config.json', 'r') as f:
             msg = json.loads(f.read())
             if not msg['message']:
-                raise Exception(r'Your msg in setting\config.json is empty')
+                raise NotImplementedError(
+                    ''' msg in setting\\config.json is empty or not defined config.json in setting (dir) ''')
             return msg
     else:
         with open(r'setting\config.json', 'rb') as f:
             msg = json.loads(f.read())
             if not msg['message']:
-                raise Exception(r'Your msg in setting\config.json is empty')
+                raise NotImplementedError(
+                    '''msg in setting\\config.json is empty or not defined config.json in setting (dir)''')
             return msg
 
 
